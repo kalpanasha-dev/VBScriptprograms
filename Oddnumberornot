@@ -1,0 +1,9 @@
+Find whether given number is a odd number
+Dim oNumber
+
+oNumber=4
+If oNumber mod 2 <>0 Then
+    Print "The Number "& oNumber &" is an Odd Number"
+else
+    Print "The Number "& oNumber &" is not an Odd Number"
+End If
