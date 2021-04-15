@@ -1,0 +1,727 @@
+'####################################################
+'####################################################
+'1    Print Hello World
+Print "Hello World"
+'####################################################
+'####################################################
+'2    Find whether given number is a odd number
+Dim oNumber
+
+oNumber=4
+If oNumber mod 2 <>0 Then
+    Print "The Number "& oNumber &" is an Odd Number"
+else
+    Print "The Number "& oNumber &" is not an Odd Number"
+End If
+'####################################################
+'####################################################
+'3    Print odd numbers between given range of numbers
+
+Dim RangeStart
+Dim RangeEnd
+Dim iCounter
+RangeStart=10
+RangeEnd=20
+
+For iCounter=RangeStart to RangeEnd
+
+    If iCounter mod 2 <>0 Then
+        Print  oNumber
+    End If
+
+Next
+
+'####################################################
+'####################################################
+'4    Find the factorial of a given number
+Dim oNumber
+Dim iCounter
+Dim fValue
+
+oNumber=6
+fValue=1
+
+For iCounter=oNumber to 1 step-1
+    fValue=fValue*iCounter
+Next
+print  fValue
+
+'####################################################
+'####################################################
+'5    Find the factors of a given number
+Dim oNumber
+Dim iCounter
+
+oNumber=10
+
+For iCounter=1 to oNumber/2
+    If oNumber mod iCounter=0 Then
+        print iCounter
+    End If
+Next
+print oNumber
+'####################################################
+'####################################################
+'6    Print prime numbers between given range of numbers
+
+Dim RangeStart
+Dim RangeEnd
+Dim iCounter
+RangeStart=1
+RangeEnd=30
+
+For iCounter=RangeStart to RangeEnd
+
+    For iCount=2 to round(iCounter/2)
+            If iCounter mod iCount=0 Then
+                Exit for
+            End If
+    Next
+    
+    If iCount=round(iCounter/2)+1 or iCounter=1 Then
+            print iCounter
+    End If
+Next
+
+'####################################################
+'####################################################
+'7    Swap 2 numbers with out a temporary variable
+
+Dim oNum1
+Dim oNum2
+
+oNum1=1055
+oNum2=155
+
+oNum1=oNum1-oNum2
+oNum2=oNum1+oNum2
+oNum1=oNum2-oNum1
+print oNum1
+print oNum2
+'####################################################
+'####################################################
+'8    Write a program to Perform specified Arithmetic Operation on two given numbers
+Dim oNum1
+Dim oNum2
+Dim oValue
+
+oNum1=10
+oNum2=20
+
+OperationtoPerform="div"
+
+Select Case lcase(OperationtoPerform)
+
+                Case "add"
+                                oValue=oNum1+oNum2
+                Case "sub"
+                                oValue=oNum1-oNum2
+                Case "mul"
+                                oValue=oNum1*oNum2
+                Case "div"
+                                oValue=oNum1/ oNum2
+End Select
+print oValue
+'####################################################
+'####################################################
+'9    Find the length of a given string
+Dim oStr
+Dim oLength
+oStr="Kalpanasha"
+oLength=len(oStr)
+print oLength
+'####################################################
+'####################################################
+'10    Reverse given string
+Dim oStr
+Dim oLength
+Dim oChar
+Dim iCounter
+
+oStr="Kalpanasha"
+oLength=len(oStr)
+
+For iCounter=oLength to 1 step-1
+        oChar=oChar&mid(oStr,iCounter,1)
+Next
+print oChar
+'####################################################
+'####################################################
+'11    Find how many alpha characters present in a string.
+Dim oStr
+Dim oLength
+Dim oChar
+Dim iCounter
+
+oStr="su1h2kar"
+oLength=len(oStr)
+
+oAlphacounter=0
+
+For iCounter=1 to oLength
+
+    If not isnumeric (mid(oStr,iCounter,1)) then
+        oAlphacounter=oAlphacounter+1 
+    End if
+    
+Next
+print oAlphacounter
+
+'####################################################
+'####################################################
+'12    Find occurrences of a specific character in a string
+
+Dim oStr
+Dim oArray
+Dim ochr
+oStr="Kalpanasha"
+ochr="a"
+
+oArray=split(oStr,ochr)
+print ubound(oArray)
+'####################################################
+'####################################################
+'13    Replace space with tab in between the words of a string.
+
+Dim oStr
+Dim fStr
+
+oStr="Quick Test Professional"
+
+fStr=replace(oStr," ",vbtab)
+print fStr
+
+'####################################################
+'####################################################
+'14    Write a program to return ASCII value of a given character
+
+Dim ochr
+Dim aVal
+
+ochr="A"
+
+aVal=asc(ochr)
+print aVal
+
+'####################################################
+'####################################################
+'15    Write a program to return character corresponding to the given ASCII value
+
+Dim ochr
+Dim aVal
+
+aVal=65
+
+oChr=chr(aVal)
+print oChr
+
+'####################################################
+'####################################################
+'16    Convert string to Upper Case
+Dim oStr
+Dim uStr
+
+oStr="QuickTest Professional"
+
+uStr=ucase(oStr)
+print uStr
+'####################################################
+'####################################################
+'17    Convert string to lower case
+Dim oStr
+Dim lStr
+
+oStr="QuickTest Professional"
+lStr=lcase(oStr)
+print lStr
+
+'####################################################
+'####################################################
+'18    Write a program to Replace a word in a string with another word
+
+Dim oStr
+Dim oWord1
+Dim oWord2
+Dim fStr
+
+oStr="Mercury Quick Test Professional"
+oWord1="Mercury"
+oWord2="HP"
+
+fStr=replace(oStr,oWord1,oWord2)
+print fStr
+
+'####################################################
+'####################################################
+'19    Check whether the string is a POLYNDROM
+
+Dim oStr
+
+oStr="bob"
+fStr=StrReverse(oStr) 
+If oStr=fStr Then
+    Print "The Given String "&oStr&" is a Palindrome"
+    else
+    Print "The Given String "&oStr&" is not a Palindrome"
+End If
+'####################################################
+'####################################################
+'20    Verify whether given two strings are equal
+Dim oStr1
+Dim ostr2
+
+oStr1="qtp"
+oStr2="qtp"
+If  oStr1=oStr2 Then
+        Print "The Given Strings are Equal"
+        else
+        Print "The Given Strings are not Equal"
+End If
+'####################################################
+'####################################################
+'21    Print all values from an Array
+Dim oArray
+Dim oCounter
+oArray=array(1,2,3,4,"qtp","Testing")
+
+For oCounter=lbound(oArray) to ubound(oArray)
+    print oArray(oCounter)
+Next
+
+'####################################################
+'####################################################
+'22    Sort Array elements
+Dim oArray
+Dim oCounter1
+Dim oCounter2
+Dim tmp
+
+oArray=array(8,3,4,2,7,1,6,9,5,0)
+
+For oCounter1=lbound(oArray) to ubound(oArray)
+
+        For oCounter2=lbound(oArray) to ubound(oArray)-1
+
+                    If oArray(oCounter2)>oArray(oCounter2+1) Then
+                        tmp=oArray(oCounter2)
+                        oArray(oCounter2)=oArray(oCounter2+1)
+                        oArray(oCounter2+1)=tmp
+                    End If
+                      
+        Next
+    
+Next
+
+For oCounter1=lbound(oArray) to ubound(oArray)
+    print oArray(oCounter1)
+Next
+    
+'####################################################
+'####################################################
+'23    Add two 2X2 matrices
+Dim oArray1(1,1)
+Dim oArray2(1,1)
+Dim tArray(1,1)
+
+oArray1(0,0)=8
+oArray1(0,1)=9
+oArray1(1,0)=5
+oArray1(1,1)=-1
+
+oArray2(0,0)=-2
+oArray2(0,1)=3
+oArray2(1,0)=4
+oArray2(1,1)=0
+
+tArray(0,0)=oArray1(0,0)+ oArray2(0,0)
+tArray(0,1)=oArray1(0,1)+oArray2(0,1)
+tArray(1,0)=oArray1(1,0)+oArray2(1,0)
+tArray(1,1)=oArray1(1,1)+oArray2(1,1)
+'####################################################
+'####################################################
+
+'24    Multiply Two Matrices of size 2X2
+
+Dim oArray1(1,1)
+Dim oArray2(1,1)
+Dim tArray(1,1)
+
+oArray1(0,0)=8
+oArray1(0,1)=9
+oArray1(1,0)=5
+oArray1(1,1)=-1
+
+oArray2(0,0)=-2
+oArray2(0,1)=3
+oArray2(1,0)=4
+oArray2(1,1)=0
+
+tArray(0,0)=oArray1(0,0)* oArray2(0,0)+ oArray1(0,1)* oArray2(1,0)
+tArray(0,1)=oArray1(0,0)* oArray2(0,1)+ oArray1(0,1)* oArray2(1,1)
+tArray(1,0)=oArray1(1,0)* oArray2(0,0)+ oArray1(1,1)* oArray2(1,0)
+tArray(1,1)=oArray1(1,0)* oArray2(0,1)+ oArray1(1,1)* oArray2(1,1)
+
+
+'####################################################
+'####################################################
+'25    Convert a String in to an array
+
+Dim oStr
+Dim iCounter
+oStr="Quick Test Professional"
+StrArray=split(oStr)
+
+For iCounter=0 to ubound(StrArray)
+        print StrArray(iCounter)
+Next
+
+'####################################################
+'####################################################
+'26    Convert a String in to an array using ‘i‘ as delimiter
+
+Dim oStr
+Dim iCounter
+oStr="Quick Test Professional"
+StrArray=split(oStr,"i")
+
+For iCounter=0 to ubound(StrArray)
+        print StrArray(iCounter)
+Next
+
+'####################################################
+'####################################################
+'27    Find number of words in string
+
+Dim oStr
+Dim iCounter
+oStr="Quick Test Professional"
+StrArray=split(oStr," ")
+print "Theere are "&ubound(StrArray)+1&" words in the string"
+
+'####################################################
+'####################################################
+'28    Write a program to reverse the words of a given string.
+
+Dim oStr
+Dim iCounter
+oStr="Quick Test Professional"
+StrArray=split(oStr," ")
+
+For iCounter=0 to ubound(StrArray)
+        print strreverse(StrArray(iCounter))
+Next
+
+'####################################################
+'####################################################
+'29    Print the data as a Pascal triangle
+'The formulae for pascal triangle is nCr=n!/(n-r)!*r!
+
+Dim PascalTriangleRows
+Dim nCr
+Dim NumCount
+Dim RowCount
+
+PascalTriangleRows = 10
+For NumCount = 0 To PascalTriangleRows
+    toPrint= Space(PascalTriangleRows - NumCount)
+    For RowCount = 0 To NumCount
+            If (NumCount = RowCount) Then
+                    nCr = 1
+            Else
+                nCr = Factorial(NumCount) / (Factorial(NumCount - RowCount) * Factorial(RowCount))
+            End If
+     toPrint=toPrint&nCr&" "
+    Next
+    print toPrint
+Next
+
+
+Function Factorial(num)
+   Dim iCounter
+    Factorial = 1
+    If num <> 0 Then
+        For iCounter = 2 To num
+            Factorial = Factorial * iCounter
+        Next
+    End If
+End Function
+'####################################################
+'####################################################
+'30    Join elements of an array as a string
+
+Dim oStr
+Dim iCounter
+oStr="Quick Test Professional"
+StrArray=split(oStr," ")
+
+print join(StrArray," ")
+
+'####################################################
+'####################################################
+'31    Trim a given string from both sides
+
+Dim oStr
+
+oStr="    QTP    "
+print trim(oStr)
+
+'####################################################
+'####################################################
+'32    Write a program to insert 100values and to delete 50 values from an array
+
+Dim oArray()
+Dim iCounter
+
+ReDim oArray(100)
+
+For iCounter=0 to ubound(oArray)
+            oArray(iCounter)=iCounter
+            'Print total 100 Values
+            print(oArray(iCounter))
+Next
+print "******************************"
+print "******************************"
+ReDim preserve oArray(50)
+
+For iCounter=0 to ubound(oArray)
+    'Print Values after deleting 50 values
+            print(oArray(iCounter))
+Next
+'####################################################
+'####################################################
+'33    Write a program to force the declaration of variables
+
+Option explicit    ' this keyword will enforce us to declare variables
+
+Dim x
+x=10
+'Here we get an error because i have not declared y,z
+y=20
+z=x+y
+print z
+'####################################################
+'####################################################
+'34    Write a program to raise an error and print the error number. 
+
+On Error Resume Next
+Err.Raise 6   ' Raise an overflow error.
+print  ("Error # " & CStr(Err.Number) & " " & Err.Description)
+
+'####################################################
+'####################################################
+'35    Finding whether a variable is an Array
+
+Dim oArray()
+
+if  isarray(oArray) then
+    print "the given variable is an array"
+ else
+    print "the given variable is not an array"
+End if
+'####################################################
+'####################################################
+'36    Write a program to list the Timezone offset from GMT
+Dim objWMIService
+Dim colTimeZone
+Dim objTimeZone
+
+Set objWMIService = GetObject("winmgmts:" & "{impersonationLevel=impersonate}!\\.\root\cimv2")
+Set colTimeZone = objWMIService.ExecQuery("Select * from Win32_TimeZone")
+ 
+For Each objTimeZone in colTimeZone
+    print "Offset: "& objTimeZone.Bias 
+Next
+'####################################################
+'####################################################
+'37 Retrieving Time Zone Information for a Computer
+Dim objWMIService
+Dim colTimeZone
+Dim objTimeZone
+
+Set objWMIService = GetObject("winmgmts:" & "{impersonationLevel=impersonate}!\\.\root\cimv2")
+Set colTimeZone = objWMIService.ExecQuery("Select * from Win32_TimeZone")
+
+For Each objItem in colTimeZone
+
+    print "Bias: " & objItem.Bias
+    print "Caption: " & objItem.Caption
+    print "Daylight Bias: " & objItem.DaylightBias
+    print "Daylight Day: " & objItem.DaylightDay
+    print "Daylight Day Of Week: " & objItem.DaylightDayOfWeek
+    print "Daylight Hour: " & objItem.DaylightHour
+    print "Daylight Millisecond: " & objItem.DaylightMillisecond
+    print "Daylight Minute: " & objItem.DaylightMinute
+    print "Daylight Month: " & objItem.DaylightMonth
+    print "Daylight Name: " & objItem.DaylightName
+    print "Daylight Second: " & objItem.DaylightSecond
+    print "Daylight Year: " & objItem.DaylightYear
+    print "Description: " & objItem.Description
+    print "Setting ID: " & objItem.SettingID
+    print "Standard Bias: " & objItem.StandardBias
+    print "Standard Day: " & objItem.StandardDay
+    print "Standard Day Of Week: " & objItem.StandardDayOfWeek
+    print "Standard Hour: " & objItem.StandardHour
+    print "Standard Millisecond: " & objItem.StandardMillisecond
+    print "Standard Minute: " & objItem.StandardMinute
+    print "Standard Month: " & objItem.StandardMonth
+    print "Standard Name: " & objItem.StandardName
+    print "Standard Second: " & objItem.StandardSecond
+    print "Standard Year: " & objItem.StandardYear
+    
+Next
+
+'####################################################
+'####################################################
+'38    Write a program to Convert an expression to a date
+Dim StrDate
+Dim actualDate 
+Dim StrTime
+Dim actualTime
+
+StrDate = "October 19, 1962"   ' Define date.
+actualDate = CDate(StrDate)   ' Convert to Date data type.
+print actualDate
+StrTime = "4:35:47 PM"         ' Define time.
+actualTime = CDate(StrTime)   ' Convert to Date data type.
+print actualTime 
+
+'####################################################
+'####################################################
+'39 Display current date and Time
+
+print now
+'####################################################
+'####################################################
+'40    Find difference between two dates.
+
+'Date difference in Years
+print DateDiff("yyyy","12/31/2002",Date)
+
+'Date difference in Months
+print DateDiff("m","12/31/2002",Date)
+
+'Date difference in Days
+print DateDiff("d","12/31/2002",Date)
+
+'####################################################
+'####################################################
+'41    Add time interval to a date
+
+print DateAdd("m", 1, "31-Jan-95")
+
+'####################################################
+'####################################################
+'42    Print current day of the week
+
+Print day(date)
+'####################################################
+'####################################################
+'43    Find whether current month is a long month
+Dim oCurrentMonth
+Dim ocurrentYear
+Dim oDaysinMonths
+
+oCurrentMonth = Month(date)
+ocurrentYear = Year(date)
+oDaysinMonths=Day(DateSerial(ocurrentYear, oCurrentMonth + 1, 0))
+print oDaysinMonths&" Days in Current Month"
+If oDaysinMonths=31 Then
+    print "Current Month is a long month"
+else
+    print "Current Month is not a long month"
+End If
+'####################################################
+'####################################################
+'44    Find whether given year is a leap year
+
+'1st Method
+
+'The rules for leap year:
+'1. Leap Year is divisible by 4    (This is mandotory Rule)
+'2. Leap Year is not divisible by 100 (Optional)
+'3. Leap Year divisble by 400 (Optional)
+
+Dim oYear
+
+oYear=1996
+
+If ((oYear Mod 4 = 0) And (oYear Mod 100 <> 0) Or (oYear Mod 400 = 0)) then
+    print "Year "&oYear&" is a Leap Year"
+else
+    print "Year "&oYear&" is not a Leap Year"
+End If
+
+
+'45.    2nd Method
+' Checking 29 days for February month in specified year
+Dim oYear
+Dim tmpDate
+
+oYear=1996
+tmpDate = "1/31/" & oYear
+DaysinFebMonth = DateAdd("m", 1, tmpDate)
+
+If  day(DaysinFebMonth )=29 then
+    print "Year "&oYear&" is a Leap Year"
+else
+    print "Year "&oYear&" is not a Leap Year"
+End If
+
+'####################################################
+'####################################################
+'46    Format Number to specified decimal places
+
+Dim oNum
+Dim DecimaPlacestobeFormat
+oNum = 3.14159
+DecimaPlacestobeFormat=2
+print Round(oNum , DecimaPlacestobeFormat) 
+
+'####################################################
+'####################################################
+'47    Write a program to Generate a Random Numbers
+'This script will generate random numbers between 10 and 20
+Dim rStartRange
+Dim rEndRange
+
+rStartRange=10
+rEndRange=20
+
+For iCounter=1 to 10
+    print Int((rEndRange - rStartRange + 1) * Rnd + rStartRange)
+Next
+'####################################################
+'####################################################
+'48    Write a program to show difference between Fix and Int 
+
+'Both Int and Fix remove the fractional part of number and return the resulting integer value.
+'The difference between Int and Fix is that if number is negative, Int returns the first negative integer less than or equal to number,
+'whereas Fix returns the first negative integer greater than or equal to number. 
+'For example, Int converts -8.4 to -9, and Fix converts -8.4 to -8.
+
+print Int(99.8)    ' Returns 99.
+print Fix(99.2)    ' Returns 99.
+print Int(-99.8)   ' Returns -100.
+print Fix(-99.8)   ' Returns -99.
+print Int(-99.2)   ' Returns -100.
+print Fix(-99.2)   ' Returns -99.
+
+'####################################################
+'####################################################
+'49    Write a program to  find subtype of a variable
+
+Dim oVar
+Dim oDatatypes
+oVar="QTP"
+oVartype=Typename(oVar)
+print oVartype
+
+'####################################################
+'####################################################
+'50    Write a program to print the decimal part of a given number
+Dim oNum
+oNum=3.123
+oDecNum=oNum- int(oNum)
+print oDecNum
+'####################################################
+'####################################################
